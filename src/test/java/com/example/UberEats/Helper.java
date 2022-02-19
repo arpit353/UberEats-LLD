@@ -2,8 +2,12 @@ package com.example.UberEats;
 
 import com.example.UberEats.Models.Address.Address;
 import com.example.UberEats.Models.Address.Location;
+import com.example.UberEats.Models.Food.Food;
+import com.example.UberEats.Models.Food.FoodType;
 import com.example.UberEats.Models.Restaurant;
 import com.example.UberEats.Models.User;
+
+import java.util.List;
 
 public class Helper {
 
@@ -22,7 +26,7 @@ public class Helper {
     public static User user = User.builder()
             .id("USER1")
             .phoneNumber("123456789")
-            .name("Biriyani")
+            .name("Biryani")
             .address(address)
             .build();
 
@@ -34,5 +38,22 @@ public class Helper {
             .address(address)
             .name("Dhaba")
             .build();
+
+    public static Food food1 = Food.builder()
+            .foodType(FoodType.VEG)
+            .id("FOOD1")
+            .name("Biryani")
+            .price(300.00)
+            .build();
+
+    public static Food food2 = Food.builder()
+            .foodType(FoodType.NON_VEG)
+            .id("FOOD2")
+            .name("Khichdi")
+            .price(300.00)
+            .build();
+
+    public static List<Food> foodList = List.of(food1, food2);
+
 
 }

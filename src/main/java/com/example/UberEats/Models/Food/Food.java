@@ -8,6 +8,6 @@ import lombok.Data;
 public class Food {
     String id;
     String name;
-    String price;
+    Double price;
     FoodType foodType;
 }
