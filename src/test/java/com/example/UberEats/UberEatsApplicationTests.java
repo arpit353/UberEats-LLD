@@ -17,6 +17,8 @@ class UberEatsApplicationTests {
 	FoodMenuController foodMenuController;
 	CartController cartController;
 	PricingController pricingController;
+	PaymentController paymentController;
+	OrderController orderController;
 
 	@BeforeEach
 	void setup() {
@@ -25,12 +27,16 @@ class UberEatsApplicationTests {
 		PricingService pricingService = new PricingService();
 		CartService cartService = new CartService(foodService, pricingService);
 		RestaurantService restaurantService = new RestaurantService(userService);
+		PaymentService paymentService = new PaymentService();
+		OrderService orderService = new OrderService();
 
 		userController = new UserController(userService);
 		restaurantController = new RestaurantController(restaurantService);
 		foodMenuController = new FoodMenuController(foodService);
 		cartController = new CartController(cartService);
 		pricingController = new PricingController(pricingService);
+		paymentController = new PaymentController(paymentService);
+		orderController = new OrderController(orderService);
 	}
 
 	@Test
