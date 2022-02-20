@@ -39,6 +39,10 @@ public class PaymentService implements PaymentServiceInterface {
         paymentData.put(payment.getId(), payment);
     }
 
+    public Payment getPayment(String paymentId) {
+        return paymentData.get(paymentId);
+    }
+
     @Override
     public void makePayment(String userId, String billId, PaymentType paymentType) {
 
@@ -67,13 +71,13 @@ public class PaymentService implements PaymentServiceInterface {
 
         Payment payment = Payment.builder()
                 .id(paymentId)
+                .orderId(order.getId())
                 .amount(bill.getTotalCost())
                 .paymentStatus(PaymentStatus.APPROVED)
                 .paymentType(paymentType)
                 .build();
 
         addPayment(payment);
-
     }
 
 }

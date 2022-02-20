@@ -10,7 +10,7 @@ public class OrderController {
 
     @Autowired
     public OrderController(OrderService orderService) {
-        orderService = new OrderService();
+        this.orderService = orderService;
     }
 
     public Order getOrder(String orderId) {
@@ -21,8 +21,12 @@ public class OrderController {
         orderService.cancelOrder(orderId);
     }
 
-    public Order getOrderService(String orderId) {
+    public Order getOrderByOrderId(String orderId) {
         return orderService.getOrder(orderId);
+    }
+
+    public Order getOrderByUserId(String userId) {
+        return orderService.getOrderByUserId(userId);
     }
 
 }

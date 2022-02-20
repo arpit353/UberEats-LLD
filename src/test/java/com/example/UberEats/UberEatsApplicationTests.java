@@ -2,6 +2,9 @@ package com.example.UberEats;
 
 import com.example.UberEats.Controller.*;
 import com.example.UberEats.Models.Bill.Bill;
+import com.example.UberEats.Models.Order.Order;
+import com.example.UberEats.Models.Payment.Payment;
+import com.example.UberEats.Models.Payment.PaymentType;
 import com.example.UberEats.Services.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -71,7 +74,14 @@ class UberEatsApplicationTests {
 		bill = pricingController.getBill(billId);
 		System.out.println(bill);
 
+		paymentController.makePayment(user.getId(), billId, PaymentType.CASH_ON_DELIVERY);
 
+		Order order = orderController.getOrderByUserId(user.getId());
+
+		Payment payment = paymentController.getPayment(order.getPaymentId());
+
+		System.out.println(order);
+		System.out.println(payment);
 
 	}
 }

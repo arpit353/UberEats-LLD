@@ -15,8 +15,7 @@ public class OrderService implements OrderServiceInterface {
 
     @Override
     public void placeOrder(Order order) {
-        Order currentOrder = orderData.get(order.getId());
-        currentOrder.setOrderStatus(OrderStatus.PLACED);
+        order.setOrderStatus(OrderStatus.PLACED);
         orderData.put(order.getId(), order);
         List<Order> orders = orderDataByUserId.getOrDefault(order.getUserId(), new ArrayList<>());
 
@@ -38,5 +37,9 @@ public class OrderService implements OrderServiceInterface {
     @Override
     public Order getOrder(String orderId) {
         return orderData.get(orderId);
+    }
+
+    public Order getOrderByUserId(String userId) {
+        return orderDataByUserIdCurrent.get(userId);
     }
 }
