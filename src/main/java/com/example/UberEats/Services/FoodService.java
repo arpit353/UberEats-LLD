@@ -17,6 +17,10 @@ public class FoodService implements FoodServiceInterface {
         foodData.put(food.getId(), food);
     }
 
+    public Food getFood(String foodId) {
+        return foodData.get(foodId);
+    }
+
     @Override
     public void addFoodMenu(String restaurantId, List<Food> foodList) {
         foodMenuData.put(restaurantId, foodList);

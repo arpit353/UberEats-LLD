@@ -6,8 +6,8 @@ public interface OrderServiceInterface {
 
     public void placeOrder(Order order);
 
-    public void cancelOrder(Order order);
+    public void cancelOrder(String orderId);
 
-    public void getOrder(String orderId);
+    public Order getOrder(String orderId);
 
 }

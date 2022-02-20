@@ -14,4 +14,5 @@ public class Order {
     String restaurantId;
     List<Food> foodItemsList;
     OrderStatus orderStatus;
+    String paymentId;
 }

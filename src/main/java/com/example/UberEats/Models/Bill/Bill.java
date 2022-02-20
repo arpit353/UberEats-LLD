@@ -1,5 +1,6 @@
 package com.example.UberEats.Models.Bill;
 
+import com.example.UberEats.Models.Payment.PaymentStatus;
 import com.example.UberEats.Models.Payment.PaymentType;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,6 @@ public class Bill {
     Double totalCost;
     Double discount;
     Double tax;
-    CouponCode couponCode;
-    PaymentType paymentType;
+    String couponCode;
+    PaymentStatus paymentStatus;
 }

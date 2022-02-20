@@ -21,6 +21,12 @@ public class CartController {
         cartService.removeFromCart(userId, restaurantId, foodId);
     }
 
+    public Cart getCartFromUserId(String userId) {
+        return cartService.getUserCart(userId);
+    }
 
+    public String confirmCart(String userId) {
+        return cartService.confirmCart(userId);
+    }
 
 }

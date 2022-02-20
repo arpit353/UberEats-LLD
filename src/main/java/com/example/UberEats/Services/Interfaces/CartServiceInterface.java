@@ -10,4 +10,6 @@ public interface CartServiceInterface {
 
     public Cart getUserCart(String userId);
 
+    public String confirmCart(String userId);
+
 }

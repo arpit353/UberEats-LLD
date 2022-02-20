@@ -4,10 +4,8 @@ import com.example.UberEats.Models.Bill.Bill;
 
 public interface PricingServiceInterface {
 
-    public void applyCouponCode();
+    public void applyCouponCode(String billId, String CouponCode);
 
     public Bill getDetailedBill(String id);
-
-    public Bill getDetailedBillByOrderId(String id);
 
 }

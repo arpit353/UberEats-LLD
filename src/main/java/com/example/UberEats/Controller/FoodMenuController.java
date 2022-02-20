@@ -23,4 +23,8 @@ public class FoodMenuController {
         foodService.addFoodMenu(restaurantId, foodList);
     }
 
+    public void addFood(Food food) {
+        foodService.addFood(food);
+    }
+
 }
