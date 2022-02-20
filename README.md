@@ -13,3 +13,5 @@ Requirements
 * User can apply the coupons. User can get the detailed bill containing tax details.
 * User can made a payment using different modes of payment - credit card, wallet, etc.
 * User can get the order status anytime. Success, Out for Delivery, Delivered, etc.
+
+To Test the application, Run UberEatsApplicationTests
