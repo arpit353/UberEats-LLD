@@ -4,8 +4,10 @@ import com.example.UberEats.Models.Cart;
 
 public interface CartServiceInterface {
 
-    public void addToCart(Cart cart);
+    public void addToCart(String userId, String restaurantId, String foodId);
 
-    public void removeFromCart(String cartId);
+    public void removeFromCart(String userId, String restaurantId, String foodId);
+
+    public Cart getUserCart(String userId);
 
 }
